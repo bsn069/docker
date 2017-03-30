@@ -28,4 +28,4 @@ build:
     image:
         dockerfile_path: Dockerfile
         build_dir: /
-cache: true
+        cache: true
