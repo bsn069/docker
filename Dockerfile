@@ -1,9 +1,7 @@
-FROM golang:1.5.1
+FROM daocloud.io/nginx:1.11-alpine
 
-MAINTAINER Sakeven "sakeven.jiang@daocloud.io"
+MAINTAINER Golfen Guo <golfen.guo@daocloud.io>
 
-ADD . $GOPATH/src/app
-RUN go get app
-RUN CGO_ENABLED=0 go install -a app
+ 
 
-CMD app
+EXPOSE 80
