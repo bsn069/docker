@@ -16,13 +16,13 @@ test:
         - sudo apt-get update
 
     before_script:
-        - mkdir -p /gopath/src/golang-redis-sample
-        - mv ./* /gopath/src/golang-redis-sample
+        - mkdir -p /gopath/src/docker
+        - mv ./* /gopath/src/docker
 
     script:
         - export GOPATH=/gopath
-        - go get -t golang-redis-sample
-        - go test golang-redis-sample
+        - go get -t docker
+        - go test docker
 
 build:
     image:
