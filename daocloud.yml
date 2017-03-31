@@ -1,6 +1,27 @@
 version: 2.0
 
 test:
+    image:
+        daocloud/ci-golang:1.6
+ 
+    services:
+        - redis
+        - mysql
+ 
+    # using default docker-link env
+    env:
+        - ENV_BSN_K1 = "env_bsn_v1"
+ 
+    install:
+ 
+    before_script:
+        - mkdir -p /gopath/src/golang-redis-sample
+        - mv ./* /gopath/src/golang-redis-sample
+ 
+    script:
+        - export GOPATH=/gopath
+        - echo $GOPATH
+        - ping -c 2 www.baidu.com
 
 build:
     lite_image:
