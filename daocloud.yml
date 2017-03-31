@@ -7,7 +7,7 @@ test:
     services:
         - redis
         - mysql
- 
+         
     # using default docker-link env
     env:
         - ENV_BSN_K1 = "env_bsn_v1"
@@ -21,6 +21,7 @@ test:
     script:
         - export GOPATH=/gopath
         - echo $GOPATH
+        - echo $ENV_BSN_K1
         - ping -c 2 www.baidu.com
 
 build:
