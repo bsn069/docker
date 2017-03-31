@@ -1,7 +1,10 @@
 version: 2.0
 
+test:
+
 build:
-    image:
-        dockerfile_path: dockerConfig/test/Dockerfile
-        build_dir: /
-        cache: false
+    lite_image:
+        compile:
+            dockerfile_path: dockerConfig/test/Dockerfile
+            build_dir: /
+            cache: true
