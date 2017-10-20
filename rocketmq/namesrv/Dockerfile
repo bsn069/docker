@@ -16,32 +16,5 @@
 #
 
 # Start from a Java image.
-FROM java:8
-
-# Rocketmq home
-ENV ROCKETMQ_HOME  /opt/rocketmq
-
-WORKDIR  ${ROCKETMQ_HOME}
-
-COPY rocketmq ${ROCKETMQ_HOME}
-
-# RUN mkdir -p \
-# 		/opt/logs \
-# 		/opt/store
-
-# RUN curl https://dist.apache.org/repos/dist/release/rocketmq/${ROCKETMQ_VERSION}/rocketmq-all-${ROCKETMQ_VERSION}-bin-release.zip -o rocketmq.zip \
-#           && unzip rocketmq.zip \
-#           && mv apache-rocketmq-all/* . \
-#           && rmdir apache-rocketmq-all  \
-#           && rm rocketmq.zip
-
-
-# RUN chmod +x bin/mqnamesrv
-
-# CMD cd ${ROCKETMQ_HOME}/bin && export JAVA_OPT=" -Duser.home=/opt" && sh mqnamesrv
-
-
-# EXPOSE 9876
-# VOLUME /opt/logs \
-# 		/opt/store
-
+FROM bsn069/rocketmq_server:latest
+ 
