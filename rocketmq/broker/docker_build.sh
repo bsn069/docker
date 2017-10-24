@@ -1,3 +1,9 @@
 #!/bin/bash 
 
-sudo docker build -t apache/incubator-rocketmq-broker:4.0.0-incubating .
+
+pushd ..
+	./docker_build.sh
+popd
+
+sudo docker build -t bsn069/rocketmq_broker:latest .
+ 
